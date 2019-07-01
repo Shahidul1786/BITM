@@ -12,7 +12,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static  String COL_ID = "Id";
     private static  String COL_NAME = "Name";
     private static  String COL_AGE = "Age";
-    private static  String CREATE = "create table " + TABLE_NAME + "(Id INTEGER PRIMARY KEY, Name TEXT, Age TEXT)";
+    private  String CREATE = "create table " + TABLE_NAME + "(Id INTEGER PRIMARY KEY, Name TEXT, Age TEXT)";
     private static  int VERSION = 1;
 
 

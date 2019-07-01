@@ -9,11 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 
     private EditText nameET,ageET;
     private Button insertBTN;
-    private  String aName,aAge;
+    private String aName,aAge;
 
     private DatabaseHelper helper;
 
@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        init();
+
+
 
         insertBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        init();
+
     }
 
     private void init() {
@@ -44,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
         ageET = findViewById(R.id.ageETID);
         insertBTN = findViewById(R.id.insertBTNID);
         helper = new DatabaseHelper(this);
-
-
-
 
     }
 }
