@@ -2,18 +2,19 @@ package com.example.SQLite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static  String DATABASE_NAME = "User.db";
-    private static  String TABLE_NAME = "User";
-    private static  String COL_ID = "Id";
-    private static  String COL_NAME = "Name";
-    private static  String COL_AGE = "Age";
-    private  String CREATE = "create table " + TABLE_NAME + "(Id INTEGER PRIMARY KEY, Name TEXT, Age TEXT)";
-    private static  int VERSION = 1;
+    public static  String DATABASE_NAME = "User.db";
+    public static  String TABLE_NAME = "User";
+    public static  String COL_ID = "Id";
+    public static  String COL_NAME = "Name";
+    public static  String COL_AGE = "Age";
+    public String CREATE = "create table " + TABLE_NAME + "(Id INTEGER PRIMARY KEY, Name TEXT, Age TEXT)";
+    public static  int VERSION = 1;
 
 
     public DatabaseHelper(Context context) {
@@ -45,5 +46,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
         return  id;
+    }
+
+    public Cursor showData(){
+
+        String show_all = "select * from "+TABLE_NAME;
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery(show_all,null);
+
+        return cursor;
+    }
+
+    public void deleteData(int id){
+
+        getWritableDatabase().delete(TABLE_NAME,"id=?",new String[]{String.valueOf(id)});
+
+
     }
 }
