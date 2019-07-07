@@ -13,13 +13,16 @@
         android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Expense Type"
-        android:textAlignment="center"
-        android:textColor="#ff000000"
-        android:textSize="14sp" />
+   <Spinner
+       android:id="@+id/selectExpenseSPID"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="20dp"
+       >
+
+
+   </Spinner>
 
     <EditText
         android:id="@+id/numberEt"
