@@ -10,11 +10,11 @@
 
     <ImageView
         android:layout_margin="20dp"
-        android:id="@+id/cameraImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/ic_camera_alt_black_24dp"
+        android:background="@drawable/ic_launcher_background"
         />
 
     <Button
