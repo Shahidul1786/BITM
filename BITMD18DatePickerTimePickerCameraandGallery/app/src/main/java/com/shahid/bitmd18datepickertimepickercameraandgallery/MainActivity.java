@@ -21,6 +21,7 @@ import java.util.logging.SimpleFormatter;
 public class MainActivity extends AppCompatActivity {
 
     private Button datepickerBTN,timepickerBTN;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void openDatePicker() {
 
-      DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+      DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
           @Override
           public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
               month = month+1;
 
               String pickedDate =year+"/"+month+"/"+day+" 00:00:00";
-              SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd  HH:mm:ss");
+              //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd  HH:mm:ss");
 
               Date date = null;
 
@@ -111,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,dateSetListener,year,month,day);
+        datePickerDialog.show();
 
 
     }
