@@ -2,4 +2,16 @@
     <string name="app_name">DailyExpense</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_Expense">Expense</string>
+
+    <string name="expense_type">choose expense type</string>
+    <string-array name="expenses">
+        <item>choose expense type</item>
+        <item>shoping cost</item>
+        <item>house rent</item>
+        <item>electric bill</item>
+        <item>internet bill</item>
+        <item>transport</item>
+        <item>breakfast</item>
+
+    </string-array>
 </resources>
