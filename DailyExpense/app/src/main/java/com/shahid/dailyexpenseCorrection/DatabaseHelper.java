@@ -2,6 +2,7 @@ package com.shahid.dailyexpenseCorrection;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -49,5 +50,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.close();
         return id;
 
+    }
+
+
+
+    public Cursor showData(){
+
+        String show_all = "Select * From "+TABLE_NAME;
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(show_all,null);
+        return cursor;
+    }
+
+    public void deleteData(int id){
+
+        getWritableDatabase().delete(TABLE_NAME, "ID=?", new String[]{String.valueOf(id)});
     }
 }
