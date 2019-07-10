@@ -1,35 +1,36 @@
 package com.shahid.dailyexpenseCorrection;
 
+import java.sql.Date;
+import java.sql.Time;
+
 public class Expense {
-    private double amount;
-    private int  date;
-    private int time;
-    private String expenseType;
+    int id;
+    private String amount;
+    private String date;
+    private String time;
+    //private String expenseType;
 
 
-    public Expense(double amount, int date, int time, String expenseType) {
+    public Expense(int id, String amount, String date, String time) {
+        this.id = id;
         this.amount = amount;
         this.date = date;
         this.time = time;
-        this.expenseType = expenseType;
-
     }
 
-    public double getAmount() {
+    public int getId() {
+        return id;
+    }
+
+    public String getAmount() {
         return amount;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
-
-    public String getExpenseType() {
-        return expenseType;
-    }
-
-
 }

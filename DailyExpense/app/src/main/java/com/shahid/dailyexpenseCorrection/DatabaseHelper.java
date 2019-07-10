@@ -5,17 +5,20 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.Date;
+import java.sql.Time;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static String DATABASE_NAME = "Expense.db";
     public static String TABLE_NAME = "Expense";
     public static String COL_ID = "Id";
     public static String COL_AMOUNT = "Amount";
-    public static String COL_DATE = "Date";
+    public static String COL_DATE ="Date";
     public static String COL_TIME = "Time";
-   // public static String COL_TYPE = "Type";
+    //public static String COL_TYPE = "Type";
     public static int VERSION = 1;
-    public String CREATE_TABLE = "create table Expense(Id integer primary key,Amount double, Date integer, Time integer)";
+    public String CREATE_TABLE = "create table Expense(Id INTEGER primary key,Amount TEXT,Date TEXT,Time TEXT)";
 
 
     public DatabaseHelper(Context context) {
@@ -35,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public long insertData(double amount, int date,int time){
+    public long insertData(String amount, String date,String time){
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT,amount);
@@ -45,5 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long id = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         sqLiteDatabase.close();
         return id;
+
     }
 }

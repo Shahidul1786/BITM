@@ -18,7 +18,6 @@ public class AddExpenseActivity extends AppCompatActivity {
     private EditText amountET,dateET,timeET;
     private  String amount,time,date;
 
-
     private Button addDocBTN,addExBTN;
     private DatabaseHelper helper;
 
@@ -35,6 +34,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                 amount = amountET.getText().toString();
                 date = dateET.getText().toString();
                 time = timeET.getText().toString();
+
 
                 long id = helper.insertData(amount,date,time);
                 Toast.makeText(AddExpenseActivity.this, ""+id, Toast.LENGTH_SHORT).show();
