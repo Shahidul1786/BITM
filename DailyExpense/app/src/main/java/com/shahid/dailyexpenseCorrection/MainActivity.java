@@ -1,7 +1,10 @@
 package com.shahid.dailyexpenseCorrection;
 
         import android.os.Bundle;
+        import android.view.Menu;
+        import android.view.MenuInflater;
         import android.view.MenuItem;
+        import android.widget.Toast;
 
         import androidx.annotation.NonNull;
         import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         }
+
+
     };
 
 
@@ -41,6 +46,26 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.update:
+                Toast.makeText(this, "Update is selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.delete:
+                Toast.makeText(this, "Delete is selected", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,4 +80,5 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new DashboardFragment());
 
     }
+
 }
