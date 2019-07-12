@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+
+
+
+
     public void replaceFragment(Fragment fragment){
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -52,20 +56,8 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        switch (item.getItemId()){
-            case R.id.update:
-                Toast.makeText(this, "Update is selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.delete:
-                Toast.makeText(this, "Delete is selected", Toast.LENGTH_SHORT).show();
-                return true;
-        }
 
-        return super.onOptionsItemSelected(item);
 
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

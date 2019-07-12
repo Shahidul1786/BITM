@@ -7,11 +7,119 @@
     android:orientation="vertical"
     tools:context=".UpdateActivity">
 
-    <TextView
-        android:layout_gravity="center"
-        android:text="UPDATE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:title="Update Expense"
+        app:titleTextColor="#FFFFFF">
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/updateamountET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter expense amount"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/updatedateET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter expense date "
+            android:textSize="16sp"
+            android:inputType="date"/>
+
+        <ImageView
+            android:id="@+id/updateDateIV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_date_range_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/updatetimeET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter expense time (optional) "
+            android:textSize="16sp"
+            android:inputType="time"/>
+
+        <ImageView
+            android:id="@+id/updateTimeIV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_access_time_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_assignment_black_24dp"
+            android:padding="10dp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="update document (if any)"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/updateExpenseBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"
+        android:text="update expense"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="16sp"/>
+
+
+
 
 
 </LinearLayout>

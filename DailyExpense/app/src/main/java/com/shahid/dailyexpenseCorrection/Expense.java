@@ -10,12 +10,12 @@ public class Expense {
     private String time;
     //private String expenseType;
 
-
     public Expense(int id, String amount, String date, String time) {
         this.id = id;
         this.amount = amount;
         this.date = date;
         this.time = time;
+        //this.expenseType = expenseType;
     }
 
     public int getId() {
@@ -33,4 +33,8 @@ public class Expense {
     public String getTime() {
         return time;
     }
+
+   // public String getExpenseType() {
+    //    return expenseType;
+    //}
 }

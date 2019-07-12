@@ -12,10 +12,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -35,6 +37,12 @@ public class AddExpenseFragment extends Fragment {
     private ImageView dateImage,timeImage;
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
+    private Context context;
+
+
+
+
+
     public AddExpenseFragment() {
 
     }
@@ -47,6 +55,7 @@ public class AddExpenseFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_add_expense, container, false);
 
         init(view);
+
 
 
         dateImage.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +74,8 @@ public class AddExpenseFragment extends Fragment {
         addExpense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
 
                 amount = amountET.getText().toString();
                 date = dateET.getText().toString();
@@ -161,6 +172,8 @@ public class AddExpenseFragment extends Fragment {
         dateImage = view.findViewById(R.id.dateIV);
         timeImage = view.findViewById(R.id.timeIV);
         helper = new DatabaseHelper(getContext());
+
+
 
     }
 

@@ -1,6 +1,7 @@
 package com.shahid.dailyexpenseCorrection;
 
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -17,6 +18,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -36,6 +39,8 @@ public class ExpenseFragment extends Fragment {
     private DatabaseHelper helper;
     private RecyclerView recyclerView;
     private FragmentManager fm;
+    private TextView textViewOptions;
+    private Context context;
 
 
     public ExpenseFragment() {
@@ -71,6 +76,8 @@ public class ExpenseFragment extends Fragment {
 
 
 
+
+
     private void setdata() {
 
         Cursor cursor = helper.showData();
@@ -81,6 +88,7 @@ public class ExpenseFragment extends Fragment {
             String date = cursor.getString(cursor.getColumnIndex(helper.COL_DATE));
             String time = cursor.getString(cursor.getColumnIndex(helper.COL_TIME));
             String amount = cursor.getString(cursor.getColumnIndex(helper.COL_AMOUNT));
+           // String type = cursor.getString(cursor.getColumnIndex(helper.COL_TYPE));
 
             expenseList.add(new Expense(id,amount,date,time));
             adapter.notifyDataSetChanged();
@@ -103,6 +111,8 @@ public class ExpenseFragment extends Fragment {
         expenseList = new ArrayList<>();
         helper = new DatabaseHelper(getContext());
         adapter = new ExpenseAdapter(expenseList,getContext(),helper);
+
+        textViewOptions = view.findViewById(R.id.textViewOption);
     }
 
 }

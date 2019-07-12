@@ -3,6 +3,7 @@ package com.shahid.dailyexpenseCorrection;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.provider.SyncStateContract;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -22,7 +24,7 @@ import java.util.List;
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder> {
 
-    private String amount,date,time;
+
 
     private List<Expense> expenses;
     private Context context;
@@ -47,7 +49,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         final Expense expense = expenses.get(position);
         holder.date.setText(expense.getDate());
@@ -68,18 +70,26 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
 
-                        switch (menuItem.getItemId()){
+                        int itemid = menuItem.getItemId();
 
-                            case R.id.update:
+                        boolean showMessage = false;
 
+                        String message = "";
+                        if (itemid == R.id.update){
 
+                            Intent intent = new Intent(context,UpdateActivity.class);
+                            context.startActivity(intent);
 
-                                Toast.makeText(context, "update", Toast.LENGTH_SHORT).show();
-                               break;
-                            case R.id.delete:
-                                Toast.makeText(context, "update", Toast.LENGTH_SHORT).show();
+                        }
+                        else if (itemid == R.id.delete){
 
-                                break;
+                            helper = new DatabaseHelper(context);
+                            helper.deleteData(expense.getId());
+                            expenses.remove(position);
+                            notifyDataSetChanged();
+
+                            Toast.makeText(context, "delete ", Toast.LENGTH_SHORT).show();
+
                         }
 
                         return false;
@@ -87,6 +97,20 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
                 });
 
                 popup.show();
+
+            }
+        });
+
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(context,DetailsActivity.class);
+                //intent.putExtra("amount",expense.getAmount());
+                //intent.putExtra("date",expense.getDate());
+                //intent.putExtra("time",expense.getTime());
+                context.startActivity(intent);
 
             }
         });
@@ -108,6 +132,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView expense,date,amount,time,textViewOptions;
+        private CardView cardView;
 
 
 
@@ -121,6 +146,8 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
             time = itemView.findViewById(R.id.timeTV);
 
             textViewOptions = itemView.findViewById(R.id.textViewOption);
+
+            cardView = itemView.findViewById(R.id.cardViewID);
 
 
 

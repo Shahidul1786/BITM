@@ -30,22 +30,15 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Select expense type"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:padding="5dp"/>
-
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnerID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:entries="@array/expense_array"
+                    android:prompt="@string/expense_prompt"
+                    >
+
                 </Spinner>
 
             </LinearLayout>

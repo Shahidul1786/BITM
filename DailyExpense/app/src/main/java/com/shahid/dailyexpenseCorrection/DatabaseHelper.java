@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static String COL_TIME = "Time";
     //public static String COL_TYPE = "Type";
     public static int VERSION = 1;
-    public String CREATE_TABLE = "create table Expense(Id INTEGER primary key,Amount TEXT,Date TEXT,Time TEXT)";
+    public String CREATE_TABLE = "create table Expense(Id INTEGER primary key autoincrement,Amount TEXT,Date TEXT,Time TEXT,Type TEXT)";
 
 
     public DatabaseHelper(Context context) {
@@ -62,20 +62,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public boolean updateData(String id,String amount,String date,String time) {
+    public boolean updateData(String id,String amount,String date,String time,String type) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID,id);
         contentValues.put(COL_AMOUNT,amount);
         contentValues.put(COL_DATE,date);
         contentValues.put(COL_TIME,time);
-        db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        db.update(TABLE_NAME, contentValues, "Id = ?",new String[] { id });
         return true;
     }
 
-    public Integer deleteData(String id){
+    public Integer deleteData(int id){
         SQLiteDatabase db = this.getWritableDatabase();
 
-       return db.delete(TABLE_NAME, "ID=?", new String[]{String.valueOf(id)});
+       return db.delete(TABLE_NAME, "Id=?", new String[]{String.valueOf(id)});
+
+
     }
 }

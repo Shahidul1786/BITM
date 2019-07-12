@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">DailyExpense</string>
-    <string name="expense_prompt">Select expense type</string>
+
     <string name="title_dashboard">Dashboard</string>
     <string name="title_expenses">Expenses</string>
 
-    <string-array name="expense_types">
+    <string name="expense_prompt">Select expense type</string>
 
+    <string-array name="expense_array">
+
+        <item>select expense type</item>
         <item>Lunch</item>
         <item>Transport</item>
         <item>Shopping</item>
