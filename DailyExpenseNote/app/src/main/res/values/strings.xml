@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DailyExpenseNote</string>
+
+    <string name="title_expense">Expense</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="expense_prompt">select expense type</string>
+    <string-array name="expense_array">
+        <item>select expense type</item>
+        <item>Lunch</item>
+        <item>Transport</item>
+        <item>Shopping</item>
+        <item>Grocery</item>
+        <item>Bills and payments</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
