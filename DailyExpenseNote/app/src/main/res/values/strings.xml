@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DailyExpenseNote</string>
+    <string name="app_name">Daily Expense Note</string>
 
     <string name="title_expense">Expense</string>
     <string name="title_dashboard">Dashboard</string>
