@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "524881810372",
+    "firebase_url": "https://bitm-6fadc.firebaseio.com",
+    "project_id": "bitm-6fadc",
+    "storage_bucket": "bitm-6fadc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524881810372:android:ead1974e0b9bb022",
+        "android_client_info": {
+          "package_name": "com.shahid.bitmd22_firebase_authenticationotp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524881810372-ph1h4b6663ifvus1sj2kccan07hbhltv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shahid.bitmd22_firebase_authenticationotp",
+            "certificate_hash": "01bb5cdb8c9e607f4e498c70ef641f9d80e9b46a"
+          }
+        },
+        {
+          "client_id": "524881810372-o883d2itnougkkpng8p0s1i43d853qev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2wuyE7I4s0WEjvw_GzaEZBYdra4yajTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524881810372-o883d2itnougkkpng8p0s1i43d853qev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
