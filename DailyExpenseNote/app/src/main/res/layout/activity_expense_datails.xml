@@ -228,7 +228,6 @@
                     app:cardCornerRadius="25dp">
 
                     <ImageView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -260,7 +259,6 @@
                     app:cardCornerRadius="25dp">
 
                     <ImageView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
