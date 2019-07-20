@@ -80,6 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                     String userId =firebaseAuth.getCurrentUser().getUid();
 
                     DatabaseReference userRef = databaseReference.child("users").child(userId);
+
                     HashMap<String,Object> userMap = new HashMap<>();
                     userMap.put("name",name);
                     userMap.put("email",email);
@@ -106,6 +107,8 @@ public class SignUpActivity extends AppCompatActivity {
     private void init() {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         nameET = findViewById(R.id.nameETID);
 

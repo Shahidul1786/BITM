@@ -109,8 +109,13 @@ public class VerifyActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
-                startActivity(intent);
+                if (task.isSuccessful()) {
+
+                    Intent intent = new Intent(VerifyActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(VerifyActivity.this, "Login fail", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
