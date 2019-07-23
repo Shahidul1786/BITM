@@ -24,7 +24,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemview = LayoutInflater.from(context).inflate(R.layout.recyclerview_list,parent,false);
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_list,parent,false);
 
         return new ViewHolder(itemview);
     }
@@ -47,7 +47,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         private TextView name,email,age,bloodGroup;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
