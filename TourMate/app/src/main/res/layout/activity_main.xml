@@ -1,332 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerviewID"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-</androidx.recyclerview.widget.RecyclerView>
-
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <LinearLayout
-            android:layout_margin="5dp"
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="@color/white"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolbarIconColor"
+            app:title="@strings/app_name"
+            app:titleTextAppearance="@style/toolbarText"
+            app:titleTextColor="@color/black"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:id="@+id/zweatherIVID"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/weather"/>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+            />
 
 
-                        <TextView
-                            android:id="@+id/ztripNameTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Zaflong      "
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:id="@+id/zpackageTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3 day 2 nights"
-                            android:textSize="12sp"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-                        <TextView
-                            android:id="@+id/zbudgetTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TK 6000"
-                            android:textSize="12sp"/>
-                        <Button
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/zeventBTN"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="create event"
-                            android:textAllCaps="false"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/ztempTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Temp : 17.04"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/zwindTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Wind : 1.87"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/zhumidityTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Humidity : 100.0"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
+    <FrameLayout
+        android:id="@+id/container"
+        android:background="@color/background_has"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_below="@id/appbar"
+        android:layout_above="@id/navigation"
+        >
+    </FrameLayout>
 
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:id="@+id/cweatherIVID"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/weather"/>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:id="@+id/ctripNameTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cox's Bazar"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:id="@+id/cpackageTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3 day 2 nights"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/cbudgetTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TK 5000"
-                            android:textSize="12sp"/>
-                        <Button
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/ceventBTN"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="create event"
-                            android:textAllCaps="false"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/ctempTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Temp : 17.04"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/cwindTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Wind : 1.87"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/chumidityTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Humidity : 100.0"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:id="@+id/sweatherIVID"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/weather"/>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation" />
 
 
-                        <TextView
-                            android:id="@+id/stripNameTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sajek valley"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:id="@+id/spackageTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3 day 2 nights"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/sbudgetTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TK 10000"
-                            android:textSize="12sp"/>
-                        <Button
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/seventBTN"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="create event"
-                            android:textAllCaps="false"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/stempTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Temp : 17.04"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/swindTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Wind : 1.87"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:id="@+id/shumidityTVID"
-                            android:layout_marginLeft="5dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Humidity : 100.0"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+</RelativeLayout>
