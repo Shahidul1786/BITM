@@ -1,52 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SignUpActivity"
-    android:layout_margin="10sp">
+<layout>
 
-    <EditText
-        android:id="@+id/nameETID"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="name"/>
-    <EditText
-        android:id="@+id/emailETID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="email"/>
-    <EditText
-        android:id="@+id/passwordETID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberPassword"
-        android:hint="password"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SignUpActivity"
+        android:layout_margin="10sp">
 
-    <Button
-        android:layout_marginTop="10dp"
-        android:id="@+id/signUpBTN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="sign up"
-        android:background="@color/colorAccent"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"/>
+        <EditText
+            android:id="@+id/nameETID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="name"/>
+        <EditText
+            android:id="@+id/emailETID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="email"/>
+        <EditText
+            android:id="@+id/passwordETID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="password"/>
 
-    <TextView
-        android:layout_marginTop="5dp"
-        android:id="@+id/signinTVID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Have an account? sign in"
-        android:textSize="16sp"
-        android:textAlignment="center"
-        android:textStyle="bold"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/signUpBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="sign up"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/signinTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have an account? sign in"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
 
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
