@@ -51,18 +51,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                userNameList.clear();
-                userIds.clear();
 
-               for (DataSnapshot data : dataSnapshot.getChildren()){
+                if (dataSnapshot.exists()){
 
-                   String name  = data.child("name").getValue().toString();
-                   String userId = data.getKey();
-                   userNameList.add(name);
-                   userIds.add(userId);
+                    userNameList.clear();
+                    userIds.clear();
+
+                    for (DataSnapshot data : dataSnapshot.getChildren()){
+
+                        String name  = data.child("name").getValue().toString();
+
+                        userNameList.add(name);
+
+                        String userId = data.getKey();
+
+                        userIds.add(userId);
+
+                    }
+                    initListView();
 
                 }
-                initListView();
+
+
 
             }
 
@@ -77,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         userNameList  = new ArrayList<>();
-
         userIds = new ArrayList<>();
     }
 }
