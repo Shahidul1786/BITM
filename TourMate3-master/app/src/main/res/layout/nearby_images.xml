@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/restauranrIVID"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/restaurant"/>
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/mosqueIVID"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/mosque2"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bankIVID"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/bank"/>
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/atmIVID"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/atm"/>
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/busIVID"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/bus"/>
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/clubIVID"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/night_club"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
