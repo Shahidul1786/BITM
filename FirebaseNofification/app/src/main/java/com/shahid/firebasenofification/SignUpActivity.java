@@ -27,6 +27,7 @@ import com.shahid.firebasenofification.pojoclass.User;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class SignUpActivity extends AppCompatActivity {
 
     private ActivitySignUpBinding binding;
